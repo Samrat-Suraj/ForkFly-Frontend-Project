@@ -3,13 +3,30 @@ import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 import LoginDialog from "./LoginDialog";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+
 
 const NavBar = () => {
     const navigate = useNavigate();
+    const user = {
+        name: "Suraj",
+        role : "admin",
+    }
+
     const [menu, setMenu] = useState("Home");
-    const menuItems = [
+    const menuItems = user && user?.role !== "admin" ? [
         "Home", "Browse Menu", "Special Offers", "Restaurants", "Track Order"
-    ];
+    ] : []
+
 
     const handleMenuClick = (item) => {
         setMenu(item);
@@ -50,13 +67,61 @@ const NavBar = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-                <div onClick={()=>navigate("/cart")} className="relative">
-                    <ShoppingCart size={28} className="text-black cursor-pointer " />
-                    <div className="absolute cursor-pointer h-4 w-4 rounded-full top-0 right-0 bg-red-500 text-white text-[8px] font-semibold flex items-center justify-center">
-                        1
-                    </div>
-                </div>
-                <LoginDialog />
+                {
+                    !user && user?.role !== "admin" ? 
+                    <ul className="flex items-center gap-5 cursor-pointer ">
+                        <li>Home</li>
+                    </ul> : <></>
+
+                }
+                {
+                    user && !user?.role === "admin" ?
+                        <div onClick={() => navigate("/cart")} className="relative">
+                            <ShoppingCart size={28} className="text-black cursor-pointer " />
+                            <div className="absolute cursor-pointer h-4 w-4 rounded-full top-0 right-0 bg-red-500 text-white text-[8px] font-semibold flex items-center justify-center">
+                                1
+                            </div>
+                        </div>
+                        : <></>
+                }
+
+                {
+                    user?.role === "admin" ?
+                        <div className="flex items-center gap-2" >
+                            <ul className="flex items-center gap-5 cursor-pointer ">
+                                <li>Food Items</li>
+                            </ul>
+                            <ul className="flex items-center gap-5 cursor-pointer ">
+                                <li>Restaurants</li>
+                            </ul>
+                        </div>
+                        : <></>
+                }
+
+
+                {
+                    user
+                        ?
+                        <div className=" cursor-pointer " >
+                            <DropdownMenu>
+                                <DropdownMenuTrigger>
+                                    <Avatar className="h-8 w-8">
+                                        <AvatarImage src="https://github.com/shadcn.png" />
+                                        <AvatarFallback>CN</AvatarFallback>
+                                    </Avatar>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem className=" cursor-pointer " >LogOut</DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+
+
+                        </div>
+                        : <LoginDialog />
+                }
+
             </div>
         </div>
     );

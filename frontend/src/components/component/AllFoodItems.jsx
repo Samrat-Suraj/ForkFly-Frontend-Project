@@ -47,9 +47,9 @@ const AllFoodItems = () => {
                 </div>
             </div>
 
-            <div className="w-full overflow-y-auto h-[85vh]">
+            <div className="w-full overflow-y-auto p-2 h-[85vh]">
                 {sortedFoodItems.map((item) => (
-                    <div key={item.id} className='shadow-sm p-5'>
+                    <div key={item.id} className='shadow-lg p-5'>
                         <div className="bg-white rounded-lg mb-4 flex flex-col lg:flex-row justify-between items-center">
                             <div className='flex w-full lg:w-[70%] flex-col lg:justify-between items-center lg:items-start'>
                                 <h3 className="text-sm lg:text-xl font-semibold text-gray-800">{item.name}</h3>
