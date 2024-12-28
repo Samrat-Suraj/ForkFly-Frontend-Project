@@ -11,6 +11,9 @@ import TrackPage from './pages/TrackPage'
 import MenuPages from './pages/MenuPages'
 import RestaurantPages from './pages/AdminPage/RestaurantPages'
 import FoodItemsPages from './pages/AdminPage/FoodItemsPages'
+import UpdateRestaurant from './components/component/Admin/UpdateRestaurant'
+import RegisterRestaurant from './components/component/Admin/RegisterRestaurant'
+import PostFoodItems from './components/component/Admin/PostFoodItems'
 const App = () => {
   return (
     <div className='app'>
@@ -30,8 +33,11 @@ const App = () => {
         <Route path='/menu' element={<MenuPages />}></Route>
 
 
-        <Route path='/admin/restaturant' element={<RestaurantPages />}></Route>
+        <Route path='/admin/restaurant' element={<RestaurantPages />}></Route>
+        <Route path='/admin/restaurant/register' element={<RegisterRestaurant />}></Route>
+        <Route path='/admin/restaurant/register/:id' element={<UpdateRestaurant />}></Route>
         <Route path='/admin/items' element={<FoodItemsPages />}></Route>
+        <Route path='/admin/items/post' element={<PostFoodItems />}></Route>
       </Routes>
 
       {/* Footer........................ */}

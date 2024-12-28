@@ -90,7 +90,7 @@ const NavBar = () => {
                         <ul onClick={()=>navigate("/admin/items")}  className="flex items-center gap-5 cursor-pointer">
                             <li>Food Items</li>
                         </ul>
-                        <ul onClick={()=>navigate("/admin/restaturant")} className="flex items-center gap-5 cursor-pointer">
+                        <ul onClick={()=>navigate("/admin/restaurant")} className="flex items-center gap-5 cursor-pointer">
                             <li>Restaurants</li>
                         </ul>
                     </div>
@@ -106,7 +106,7 @@ const NavBar = () => {
                                 </Avatar>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent>
-                                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                <DropdownMenuLabel>Suraj Maurya</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem className="cursor-pointer">
                                     LogOut
