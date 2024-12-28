@@ -9,6 +9,8 @@ import SpecialOffersPage from './pages/SpecialOffersPage'
 import CartPage from './pages/CartPage'
 import TrackPage from './pages/TrackPage'
 import MenuPages from './pages/MenuPages'
+import RestaurantPages from './pages/AdminPage/RestaurantPages'
+import FoodItemsPages from './pages/AdminPage/FoodItemsPages'
 const App = () => {
   return (
     <div className='app'>
@@ -25,7 +27,11 @@ const App = () => {
         <Route path='/offers' element={<SpecialOffersPage />} ></Route>
         <Route path='/cart' element={<CartPage />} ></Route>
         <Route path='/track' element={<TrackPage />} ></Route>
-        <Route path='/menu' element={<MenuPages />} ></Route>
+        <Route path='/menu' element={<MenuPages />}></Route>
+
+
+        <Route path='/admin/restaturant' element={<RestaurantPages />}></Route>
+        <Route path='/admin/items' element={<FoodItemsPages />}></Route>
       </Routes>
 
       {/* Footer........................ */}
