@@ -88,10 +88,10 @@ const NavBar = () => {
                 {user?.role === "admin" ? (
                     <div className="flex items-center gap-2">
                         <ul onClick={()=>navigate("/admin/items")}  className="flex items-center gap-5 cursor-pointer">
-                            <li>Food Items</li>
+                            <li className="font-semibold">Food Items</li>
                         </ul>
                         <ul onClick={()=>navigate("/admin/restaurant")} className="flex items-center gap-5 cursor-pointer">
-                            <li>Restaurants</li>
+                            <li className="font-semibold">Restaurants</li>
                         </ul>
                     </div>
                 ) : null}
