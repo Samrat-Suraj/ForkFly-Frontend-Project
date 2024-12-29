@@ -14,6 +14,7 @@ import FoodItemsPages from './pages/AdminPage/FoodItemsPages'
 import UpdateRestaurant from './components/component/Admin/UpdateRestaurant'
 import RegisterRestaurant from './components/component/Admin/RegisterRestaurant'
 import PostFoodItems from './components/component/Admin/PostFoodItems'
+import EditFoodItem from './components/component/Admin/EditFoodItem'
 const App = () => {
   return (
     <div className='app'>
@@ -37,6 +38,7 @@ const App = () => {
         <Route path='/admin/restaurant/register' element={<RegisterRestaurant />}></Route>
         <Route path='/admin/restaurant/register/:id' element={<UpdateRestaurant />}></Route>
         <Route path='/admin/items' element={<FoodItemsPages />}></Route>
+        <Route path='/admin/items/:id' element={<EditFoodItem />}></Route>
         <Route path='/admin/items/post' element={<PostFoodItems />}></Route>
       </Routes>
 

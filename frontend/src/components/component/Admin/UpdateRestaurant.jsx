@@ -25,7 +25,7 @@ const UpdateRestaurant = () => {
 
                     <form className="flex gap-4 flex-col mt-6 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-2xl transition-all duration-300">
 
-                        {/* Logo Section */}
+                        
                         <div className="mb-6">
                             <h2 className="text-gray-600 dark:text-gray-300 font-bold text-lg mb-3">
                                 <span className='text-2xl text-blue-400'>L</span>ogo Of Your Restaurant
@@ -47,7 +47,7 @@ const UpdateRestaurant = () => {
                             />
                         </div>
 
-                        {/* Restaurant Name */}
+                        
                         <div className="flex gap-2 flex-col mb-6">
                             <label className="text-gray-600 dark:text-gray-300 font-semibold text-[14px]" htmlFor="name">Restaurant Name</label>
                             <Input
@@ -58,7 +58,7 @@ const UpdateRestaurant = () => {
                             />
                         </div>
 
-                        {/* Restaurant Address */}
+                       
                         <div className="flex gap-2 flex-col mb-6">
                             <label className="text-gray-600 dark:text-gray-300 font-semibold text-[14px]" htmlFor="address">Address</label>
                             <Input
@@ -69,7 +69,7 @@ const UpdateRestaurant = () => {
                             />
                         </div>
 
-                        {/* Contact Number */}
+                        
                         <div className="flex gap-2 flex-col mb-6">
                             <label className="text-gray-600 dark:text-gray-300 font-semibold text-[14px]" htmlFor="contact">Contact</label>
                             <Input
@@ -80,21 +80,7 @@ const UpdateRestaurant = () => {
                             />
                         </div>
 
-                        {/* Restaurant Rating */}
-                        <div className="flex gap-2 flex-col mb-6">
-                            <label className="text-gray-600 dark:text-gray-300 font-semibold text-[14px]" htmlFor="rating">Rating</label>
-                            <Input
-                                placeholder="Enter Rating (1-5)"
-                                name="rating"
-                                id="rating"
-                                type="number"
-                                min="1"
-                                max="5"
-                                className="focus:ring-indigo-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 bg-gray-50 border-gray-300 p-3 rounded-lg shadow-sm transition-all duration-300 hover:border-indigo-400 focus:border-indigo-500"
-                            />
-                        </div>
-
-                        {/* Cuisines */}
+                      
                         <div className="flex gap-2 flex-col mb-6">
                             <label className="text-gray-600 dark:text-gray-300 font-semibold text-[14px]" htmlFor="cuisines">Cuisines</label>
                             <Input
@@ -105,7 +91,7 @@ const UpdateRestaurant = () => {
                             />
                         </div>
 
-                        {/* Price Range */}
+                       
                         <div className="flex gap-2 flex-col mb-6">
                             <label className="text-gray-600 dark:text-gray-300 font-semibold text-[14px]" htmlFor="priceRange">Price Range</label>
                             <Input
@@ -116,7 +102,7 @@ const UpdateRestaurant = () => {
                             />
                         </div>
 
-                        {/* Opening Hours */}
+                       
                         <div className="flex gap-2 flex-col mb-6">
                             <label className="text-gray-600 dark:text-gray-300 font-semibold text-[14px]" htmlFor="hours">Opening Hours</label>
                             <Input
@@ -127,7 +113,7 @@ const UpdateRestaurant = () => {
                             />
                         </div>
 
-                        {/* Features */}
+                        
                         <div className="flex gap-2 flex-col mb-6">
                             <label className="text-gray-600 dark:text-gray-300 font-semibold text-[14px]" htmlFor="features">Features</label>
                             <Input
@@ -138,7 +124,7 @@ const UpdateRestaurant = () => {
                             />
                         </div>
 
-                        {/* Submit Button */}
+                        
                         {
                             loading
                                 ? <Button type="submit" className="mt-6 mb-6 w-full sm:w-auto px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg hover:bg-gradient-to-r hover:from-indigo-600 hover:to-blue-600 focus:ring-2 focus:ring-indigo-500 flex items-center justify-center transition-all duration-300">

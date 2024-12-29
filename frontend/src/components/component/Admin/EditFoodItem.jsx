@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Loader2 } from 'lucide-react';
 
-const PostFoodItems = () => {
+const EditFoodItem = () => {
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         title: '',
@@ -30,7 +30,7 @@ const PostFoodItems = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
-        
+
         setTimeout(() => {
             setLoading(false);
             console.log('Form Submitted:', formData);
@@ -40,7 +40,7 @@ const PostFoodItems = () => {
     return (
         <div className=" mt-6 px-4 md:px-8">
             <h1 className="text-3xl mt-4 font-bold text-center">
-                <span className='text-blue-600 dark:text-blue-400'>P</span>ost <span className='text-red-600 dark:text-red-400'>F</span>ood Item
+                <span className='text-blue-600 dark:text-blue-400'>E</span>dit <span className='text-red-600 dark:text-red-400'>F</span>ood Item
             </h1>
             <div className="flex flex-col md:flex-row w-full md:w-4/5 m-auto justify-center py-6 space-y-8 md:space-y-0 md:space-x-8">
                 <div className="w-full md:w-[90%] p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
@@ -159,4 +159,4 @@ const PostFoodItems = () => {
     )
 }
 
-export default PostFoodItems;
+export default EditFoodItem;
