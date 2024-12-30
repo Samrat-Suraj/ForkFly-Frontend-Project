@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 
 const PostFoodItems = () => {
@@ -10,6 +10,7 @@ const PostFoodItems = () => {
         restaurant: '',
         price: '',
         image: null,
+        category: '', // Add category to form data
     });
 
     const handleInputChange = (e) => {
@@ -30,7 +31,7 @@ const PostFoodItems = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
-        
+
         setTimeout(() => {
             setLoading(false);
             console.log('Form Submitted:', formData);
@@ -45,6 +46,7 @@ const PostFoodItems = () => {
             <div className="flex flex-col md:flex-row w-full md:w-4/5 m-auto justify-center py-6 space-y-8 md:space-y-0 md:space-x-8">
                 <div className="w-full md:w-[90%] p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
                     <form onSubmit={handleSubmit}>
+                        {/* Food Name */}
                         <div className="mb-4">
                             <label htmlFor="title" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">Food Name</label>
                             <input
@@ -59,6 +61,7 @@ const PostFoodItems = () => {
                             />
                         </div>
 
+                        {/* Description */}
                         <div className="mb-4">
                             <label htmlFor="description" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">Description</label>
                             <textarea
@@ -73,6 +76,7 @@ const PostFoodItems = () => {
                             ></textarea>
                         </div>
 
+                        {/* Discount */}
                         <div className="mb-4">
                             <label htmlFor="discount" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">Discount (%)</label>
                             <select
@@ -96,6 +100,7 @@ const PostFoodItems = () => {
                             </select>
                         </div>
 
+                        {/* Restaurant */}
                         <div className="mb-4">
                             <label htmlFor="restaurant" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">Restaurant</label>
                             <select
@@ -108,12 +113,10 @@ const PostFoodItems = () => {
                             >
                                 <option value="">Select a Restaurant</option>
                                 {/* Map through your restaurant options here */}
-                                {/* companies.map((company, index) => (
-                                    <option key={index} value={company.id}>{company.name}</option>
-                                )) */}
                             </select>
                         </div>
 
+                        {/* Price */}
                         <div className="mb-4">
                             <label htmlFor="price" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">Price</label>
                             <input
@@ -128,6 +131,27 @@ const PostFoodItems = () => {
                             />
                         </div>
 
+                        {/* Food Category */}
+                        <div className="mb-4">
+                            <label htmlFor="category" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">Food Category</label>
+                            <select
+                                id="category"
+                                name="category"
+                                value={formData.category}
+                                onChange={handleInputChange}
+                                className="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                                required
+                            >
+                                <option value="">Select a Category</option>
+                                <option value="Appetizer">Appetizer</option>
+                                <option value="Main Course">Main Course</option>
+                                <option value="Dessert">Dessert</option>
+                                <option value="Beverage">Beverage</option>
+                                <option value="Snack">Snack</option>
+                            </select>
+                        </div>
+
+                        {/* Food Image */}
                         <div className="mb-4">
                             <label htmlFor="image" className="block text-sm font-semibold text-gray-700 dark:text-gray-300">Food Image</label>
                             <input
@@ -156,7 +180,7 @@ const PostFoodItems = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default PostFoodItems;

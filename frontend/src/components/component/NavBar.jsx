@@ -57,11 +57,10 @@ const NavBar = () => {
                         <li
                             key={item}
                             onClick={() => handleMenuClick(item)}
-                            className={`${
-                                menu === item
-                                    ? "text-black border-b-2 border-orange-400 font-semibold cursor-pointer"
-                                    : "text-gray-600 hover:text-black cursor-pointer"
-                            } transition-all`}
+                            className={`${menu === item
+                                ? "text-black border-b-2 border-orange-400 font-semibold cursor-pointer"
+                                : "text-gray-600 hover:text-black cursor-pointer"
+                                } transition-all`}
                         >
                             {item}
                         </li>
@@ -86,12 +85,15 @@ const NavBar = () => {
                 ) : null}
 
                 {user?.role === "admin" ? (
-                    <div className="flex items-center gap-2">
-                        <ul onClick={()=>navigate("/admin/items")}  className="flex items-center gap-5 cursor-pointer">
-                            <li className="font-semibold">Food Items</li>
+                    <div className="lg:flex hidden items-center gap-2">
+                        <ul onClick={() => navigate("/admin/orders")} className="flex items-center gap-5 cursor-pointer">
+                            <li className="font-semibold text-sm">Orders</li>
                         </ul>
-                        <ul onClick={()=>navigate("/admin/restaurant")} className="flex items-center gap-5 cursor-pointer">
-                            <li className="font-semibold">Restaurants</li>
+                        <ul onClick={() => navigate("/admin/items")} className="flex items-center gap-5 cursor-pointer">
+                            <li className="font-semibold text-sm">Food Items</li>
+                        </ul>
+                        <ul onClick={() => navigate("/admin/restaurant")} className="flex items-center gap-5 cursor-pointer">
+                            <li className="font-semibold text-sm">Restaurants</li>
                         </ul>
                     </div>
                 ) : null}
@@ -108,6 +110,27 @@ const NavBar = () => {
                             <DropdownMenuContent>
                                 <DropdownMenuLabel>Suraj Maurya</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
+
+                                {user?.role === "admin" ? (
+                                    <div className="flex lg:hidden flex-col">
+                                        <DropdownMenuItem className="cursor-pointer">
+                                            <ul onClick={() => navigate("/admin/orders")} className="flex items-center cursor-pointer">
+                                                <li className="text-sm">Orders</li>
+                                            </ul>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem className="cursor-pointer">
+                                            <ul onClick={() => navigate("/admin/items")} className="flex items-center cursor-pointer">
+                                                <li className="text-sm">Food Items</li>
+                                            </ul>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem className="cursor-pointer">
+                                            <ul onClick={() => navigate("/admin/restaurant")} className="flex items-center cursor-pointer">
+                                                <li className="text-sm">Restaurants</li>
+                                            </ul>
+                                        </DropdownMenuItem>
+                                    </div>
+                                ) : null}
+
                                 <DropdownMenuItem className="cursor-pointer">
                                     LogOut
                                 </DropdownMenuItem>
